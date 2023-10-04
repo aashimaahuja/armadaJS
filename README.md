@@ -28,3 +28,10 @@ npm run build
 ```
 
 For more documentation see [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesurfer.pomb.us/)
+
+
+## Run demo videos
+
+```sh
+npx http-server -p 3005
+```
