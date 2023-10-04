@@ -1,0 +1,1073 @@
+import { CodeSurfer, CodeSurferColumns, Step } from "code-surfer";
+import { github, vsDark, nightOwl } from "@code-surfer/themes";
+import "prismjs/components/prism-smalltalk";
+import intro from "./images/intro.jpg";
+import frame1 from "./renderingSlides/frame1.jpg";
+import frame2 from "./renderingSlides/frame2.jpg";
+import frame3 from "./renderingSlides/frame3.jpg";
+import frame4 from "./renderingSlides/frame4.jpg";
+import frame5 from "./renderingSlides/frame5.jpg";
+import frame6 from "./renderingSlides/frame6.jpg";
+import frame7 from "./renderingSlides/frame7.jpg";
+import frame8 from "./renderingSlides/frame8.jpg";
+import frame9 from "./renderingSlides/frame9.jpg";
+import frame10 from "./renderingSlides/frame10.jpg";
+import frame11 from "./renderingSlides/frame11.jpg";
+import frame12 from "./renderingSlides/frame12.jpg";
+import frame13 from "./renderingSlides/frame13.jpg";
+import frame14 from "./renderingSlides/frame14.jpg";
+import frame15 from "./renderingSlides/frame15.jpg";
+
+import frame17 from "./serverComponentsSlides/frame17.jpg";
+import frame18 from "./serverComponentsSlides/frame18.jpg";
+import frame19 from "./serverComponentsSlides/frame19.jpg";
+import frame20 from "./serverComponentsSlides/frame20.jpg";
+import frame21 from "./serverComponentsSlides/frame21.jpg";
+import frame22 from "./serverComponentsSlides/frame22.jpg";
+import frame23 from "./serverComponentsSlides/frame23.jpg";
+import frame24 from "./serverComponentsSlides/frame24.jpg";
+import frame25 from "./serverComponentsSlides/frame25.jpg";
+import frame26 from "./serverComponentsSlides/frame26.jpg";
+
+import Demo1 from "./codeDemos/Demo1";
+import Demo2 from "./codeDemos/Demo2";
+import Demo3 from "./codeDemos/Demo3";
+import Demo4 from "./codeDemos/Demo4";
+import UseDeferredValueDemo1 from "./codeDemos/UseDeferredValueDemo1";
+
+import ReactLogo from "./ReactLogo";
+import thankyou from "./images/thankyou.png";
+
+import suspense1 from "./suspenseImages/suspense1.png";
+import suspense2 from "./suspenseImages/suspense2.png";
+import suspense3 from "./suspenseImages/suspense3.png";
+import suspense4 from "./suspenseImages/suspense4.png";
+
+export const theme = nightOwl;
+
+## Perfomance wins in react 18
+
+---
+
+### React 18
+
+- Rendering performance
+- Concurrent rendering
+- Transitions
+- Automatic batching
+- Suspense
+- React server components
+
+---
+
+<img src={intro} width="80%" />
+
+---
+
+<ul>
+  <li>Rendering performance</li>
+  <li style="opacity: 0.3">Concurrent rendering</li>
+  <li style="opacity: 0.3">Transitions</li>
+  <li style="opacity: 0.3">Automatic batching</li>
+  <li style="opacity: 0.3">Suspense</li>
+   <li style="opacity: 0.3">React server components</li>
+</ul>
+
+---
+
+<img src={frame1} width="80%" />
+
+---
+
+<img src={frame2} width="80%" />
+
+---
+
+<img src={frame3} width="80%" />
+
+---
+
+<img src={frame4} width="80%" />
+
+---
+
+<img src={frame5} width="80%" />
+
+---
+
+<img src={frame6} width="80%" />
+
+---
+
+<img src={frame7} width="80%" />
+
+---
+
+<img src={frame8} width="80%" />
+
+---
+
+<img src={frame9} width="80%" />
+
+---
+
+<Demo1 />
+
+---
+
+<CodeSurferColumns themes={[nightOwl, nightOwl]}>
+
+<Step>
+
+```js
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+```
+
+<Demo1 />
+
+</Step>
+
+<Step>
+
+```js
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+
+return (
+  <div>
+    <input onChange={filterItems} />
+  </div>
+);
+```
+
+<Demo1 />
+
+</Step>
+
+<Step>
+
+```js
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+
+const filterItems = (e) => {
+  const value = e.target.value;
+   const filteredItems = dummyItems.filter(
+    (item) => item.includes(value)
+  );
+
+  setQuery(value);
+  setFilteredItems([...filteredItems]);
+};
+
+return (
+  <div>
+    <input onChange={filterItems} />
+  </div>
+);
+```
+
+<Demo1 />
+
+</Step>
+
+<Step>
+
+```js
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+
+const filterItems = (e) => {
+  const value = e.target.value;
+   const filteredItems = dummyItems.filter(
+    (item) => item.includes(value)
+  );
+
+  setQuery(value);
+  setFilteredItems([...filteredItems]);
+};
+
+return (
+  <div>
+    <input onChange={filterItems} />
+    <ul>
+      {filteredItems.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+```
+
+<Demo1 />
+
+</Step>
+
+<Step>
+
+```js 12:13
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+
+const filterItems = (e) => {
+  const value = e.target.value;
+   const filteredItems = dummyItems.filter(
+    (item) => item.includes(value)
+  );
+
+  setQuery(value);
+  setFilteredItems([...filteredItems]);
+};
+
+return (
+  <div>
+    <input onChange={filterItems} />
+    <ul>
+      {filteredItems.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+```
+
+<Demo1 />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<img src={frame10} width="80%" />
+
+---
+
+<img src={frame11} width="80%" />
+
+---
+
+
+<ul>
+  <li style="opacity: 0.3">Rendering performance</li>
+  <li>Concurrent rendering</li>
+  <li style="opacity: 0.3">Transitions</li>
+  <li style="opacity: 0.3">Automatic batching</li>
+  <li style="opacity: 0.3">Suspense</li>
+   <li style="opacity: 0.3">React server components</li>
+</ul>
+
+---
+
+<img src={frame12} width="80%" />
+
+---
+
+<img src={frame13} width="80%" />
+
+---
+
+<img src={frame14} width="80%" />
+
+---
+
+<img src={frame15} width="80%" />
+
+---
+
+<ul>
+  <li style="opacity: 0.3">Rendering performance</li>
+  <li style="opacity: 0.3">Concurrent rendering</li>
+  <li >Transitions</li>
+  <li style="opacity: 0.3">Automatic batching</li>
+  <li style="opacity: 0.3">Suspense</li>
+  <li style="opacity: 0.3">React server components</li>
+</ul>
+
+---
+
+<CodeSurferColumns themes={[nightOwl, nightOwl]}>
+
+<Step>
+
+```js
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+
+const filterItems = (e) => {
+  const value = e.target.value;
+  const filteredItems = dummyItems.filter(
+    (item) => item.includes(value)
+  );
+
+  setQuery(value);
+  setFilteredItems([...filteredItems]);
+};
+
+return (
+  <div>
+    <input onChange={filterItems} />
+    <ul>
+      {filteredItems.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+```
+
+<Demo1 />
+
+</Step>
+
+<Step>
+
+```js
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+
+const [isPending, startTransition] = useTransition();
+
+const filterItems = (e) => {
+  const value = e.target.value;
+  const filteredItems = dummyItems.filter(
+    (item) => item.includes(value)
+  );
+
+  setQuery(value);
+  setFilteredItems([...filteredItems]);
+};
+
+return (
+  <div>
+    <input onChange={filterItems} />
+    <ul>
+      {filteredItems.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+```
+
+<Demo1 />
+
+</Step>
+
+<Step>
+
+```js
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+
+const [isPending, startTransition] = useTransition();
+
+const filterItems = (e) => {
+  const value = e.target.value;
+  const filteredItems = dummyItems.filter(
+    (item) => item.includes(value)
+  );
+  setQuery(value);
+  startTransition(() => {
+    setFilteredItems([...filteredItems]);
+  });
+};
+
+return (
+  <div>
+    <input onChange={filterItems} />
+    <ul>
+      {filteredItems.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+```
+
+<Demo1 />
+
+</Step>
+
+<Step>
+
+```js 14:16
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+
+const [isPending, startTransition] = useTransition();
+
+const filterItems = (e) => {
+  const value = e.target.value;
+  const filteredItems = dummyItems.filter(
+    (item) => item.includes(value)
+  );
+  setQuery(value);
+  startTransition(() => {
+    setFilteredItems([...filteredItems]);
+  });
+};
+
+return (
+  <div>
+    <input onChange={filterItems} />
+    <ul>
+      {filteredItems.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+```
+
+<Demo2 />
+
+</Step>
+
+<Step>
+
+```js
+const [query, setQuery] = useState("");
+
+const [filteredItems, setFilteredItems] = 
+useState(dummyItems);
+
+const [isPending, startTransition] = useTransition();
+
+const filterItems = (e) => {
+  const value = e.target.value;
+  const filteredItems = dummyItems.filter(
+    (item) => item.includes(value)
+  );
+  setQuery(value);
+  startTransition(() => {
+    setFilteredItems([...filteredItems]);
+  });
+};
+
+return (
+  <div>
+    <input onChange={filterItems} />
+    {isPending ? (
+      <div>Loading...</div>
+    ) : (
+      <ul>
+        {filteredItems.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    )}
+  </div>
+);
+```
+
+<Demo3 />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<UseDeferredValueDemo1 />
+
+---
+
+<CodeSurferColumns themes={[nightOwl, vsDark]}>
+
+<Step>
+
+```js
+function App() {
+  const [value, setValue] = useState(0);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setValue((prevValue) => prevValue + 1);
+        }}
+      >
+        {value}
+      </button>
+
+      <ItemList value={value} />
+    </div>
+  );
+}
+```
+
+```js
+const ItemList = ({ value }) => {
+  const result = Array(90000)
+    .fill(1)
+    .map((_, index) => {
+      return <li key={index}>{value + index}</li>;
+    });
+  return <ul>{result}</ul>;
+};
+```
+
+</Step>
+
+<Step>
+
+```js
+function App() {
+  const [value, setValue] = useState(0);
+  const deferredValue = useDeferredValue(value);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setValue((prevValue) => prevValue + 1);
+        }}
+      >
+        {value}
+      </button>
+
+      <ItemList value={value} />
+    </div>
+  );
+}
+```
+
+```js
+const ItemList = ({ value }) => {
+  const result = Array(90000)
+    .fill(1)
+    .map((_, index) => {
+      return <li key={index}>{value + index}</li>;
+    });
+  return <ul>{result}</ul>;
+};
+```
+
+</Step>
+
+<Step>
+
+```js
+function App() {
+  const [value, setValue] = useState(0);
+  const deferredValue = useDeferredValue(value);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setValue((prevValue) => prevValue + 1);
+        }}
+      >
+        {value}
+      </button>
+
+      <ItemList value={deferredValue} />
+    </div>
+  );
+}
+```
+
+```js
+const ItemList = ({ value }) => {
+  const result = Array(90000)
+    .fill(1)
+    .map((_, index) => {
+      return <li key={index}>{value + index}</li>;
+    });
+  return <ul>{result}</ul>;
+};
+```
+
+</Step>
+
+<Step>
+
+```js
+const MemoedList = React.memo(ItemList);
+
+function App() {
+  const [value, setValue] = useState(0);
+  const deferredValue = useDeferredValue(value);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setValue((prevValue) => prevValue + 1);
+        }}
+      >
+        {value}
+      </button>
+
+      <MemoedList value={deferredValue} />
+    </div>
+  );
+}
+```
+
+```js
+const ItemList = ({ value }) => {
+  const result = Array(90000)
+    .fill(1)
+    .map((_, index) => {
+      return <li key={index}>{value + index}</li>;
+    });
+  return <ul>{result}</ul>;
+};
+```
+
+</Step>
+
+<Step>
+
+```js
+const MemoedList = React.memo(ItemList);
+
+function App() {
+  const [value, setValue] = useState(0);
+  const deferredValue = useDeferredValue(value);
+  const isPending = deferredValue !== value;
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setValue((prevValue) => prevValue + 1);
+        }}
+      >
+        {value}
+      </button>
+
+      <div
+        style={{
+          opacity: isPending ? 0.5 : 1,
+        }}
+      >
+        <MemoedList value={deferredValue} />
+      </div>
+    </div>
+  );
+}
+```
+
+```js
+const ItemList = ({ value }) => {
+  const result = Array(90000)
+    .fill(1)
+    .map((_, index) => {
+      return <li key={index}>{value + index}</li>;
+    });
+  return <ul>{result}</ul>;
+};
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<Demo4 />
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```smalltalk
+
+Both useTransition and useDeferredValue give same results
+but useDeferred value is used when you don't have control over the
+state update of a value you want to defer.
+
+```
+
+```smalltalk
+
+Both useTransition and useDeferredValue give same results
+but useDeferred value is used when you don't have control over the
+state update of a value you want to defer.
+
+useDeferredValue and useTransition does an extra rerender.
+
+```
+
+</CodeSurfer>
+
+---
+
+<ul>
+  <li style="opacity: 0.3">Rendering performance</li>
+  <li style="opacity: 0.3">Concurrent rendering</li>
+  <li style="opacity: 0.3">Transitions</li>
+  <li>Automatic batching</li>
+  <li style="opacity: 0.3">Suspense</li>
+  <li style="opacity: 0.3">React server components</li>
+</ul>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```smalltalk title='Automatic Batching'
+We know that whenever there is a state update , react does a re render.
+Batching is when React groups multiple state updates in a single render for
+performance benefits.
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```js
+const [count, setCount] = useState(0);
+const [isActive, setIsActive] = useState(false);
+```
+
+```js
+const [count, setCount] = useState(0);
+const [isActive, setIsActive] = useState(false);
+
+function incrementCount() {}
+
+<button onClick={incrementCount}>Count</button>;
+```
+
+```js
+const [count, setCount] = useState(0);
+const [isActive, setIsActive] = useState(false);
+
+function incrementCount() {
+  setCount(count + 1);
+  setIsActive(!isActive);
+}
+
+<button onClick={incrementCount}>Count</button>;
+```
+
+```js
+const [count, setCount] = useState(0);
+const [isActive, setIsActive] = useState(false);
+
+function incrementCount() {
+  setTimeout(() => {
+    setCount(count + 1);
+    setIsActive(!isActive);
+  },100);
+}
+
+<button onClick={incrementCount}>Count</button>;
+```
+
+```js
+const [count, setCount] = useState(0);
+const [isActive, setIsActive] = useState(false);
+
+function incrementCount() {
+  fetch(('/someurl').then(() => {
+    setCount(count + 1);
+    setIsActive(!isActive);
+  });
+}
+
+<button onClick={incrementCount}>Count</button>;
+```
+
+```js
+const [count, setCount] = useState(0);
+const [isActive, setIsActive] = useState(false);
+
+function incrementCount() {
+  fetch(('/someurl').then(() => {
+    // 2 rerenders before React 18
+    // 1 rerender in React 18
+    setCount(count + 1);
+    setIsActive(!isActive);
+  });
+}
+
+<button onClick={incrementCount}>Count</button>;
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```smalltalk
+
+In React 18 , all state updates are batched out of the box irrespective of
+how they are called.
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```js
+function incrementCount() {
+  flushSync(() => {
+    setCount(count + 1);
+  });
+  setIsActive(!isActive);
+}
+```
+
+</CodeSurfer>
+
+---
+
+<ul>
+  <li style="opacity: 0.3">Rendering performance</li>
+  <li style="opacity: 0.3">Concurrent rendering</li>
+  <li style="opacity: 0.3">Transitions</li>
+  <li style="opacity: 0.3">Automatic batching</li>
+  <li>Suspense</li>
+  <li style="opacity: 0.3">React server components</li>
+</ul>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```smalltalk
+
+Suspense lets you specify the loading state for a part of the
+component tree if it's not yet ready to be displayed
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```js title="Displaying fallback for lazy loaded component"
+function App() {}
+```
+
+```js title="Displaying fallback for lazy loaded component"
+function App() {
+  const Profile = React.lazy(() => import("./Profile"));
+}
+```
+
+```js title="Displaying fallback for lazy loaded component"
+function App() {
+  const Profile = React.lazy(() => import("./Profile"));
+
+  return <Profile />;
+}
+```
+
+```js title="Displaying fallback for lazy loaded component"
+function App() {
+  const Profile = React.lazy(() => import("./Profile"));
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <Profile />
+    </Suspense>
+  );
+}
+```
+
+
+```js title="Data Fetching"
+function Posts() {}
+
+function App() {
+  const Profile = React.lazy(() => import("./Profile"));
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <Profile />
+    </Suspense>
+  );
+}
+```
+
+```js title="Data Fetching"
+function Posts() {
+  const posts = fetchPosts("/posts");
+}
+
+function App() {
+  const Profile = React.lazy(() => import("./Profile"));
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <Profile />
+    </Suspense>
+  );
+}
+```
+
+```js title="Data Fetching"
+function Posts() {
+  const posts = fetchPosts("/posts");
+  return posts.map((post) => <div>{post.title}</div>);
+}
+
+function App() {
+  const Profile = React.lazy(() => import("./Profile"));
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <Profile />
+    </Suspense>
+  );
+}
+```
+
+```js title="Data Fetching"
+function Posts() {
+  const posts = fetchPosts("/posts");
+  return posts.map((post) => <div>{post.title}</div>);
+}
+
+function App() {
+  const Profile = React.lazy(() => import("./Profile"));
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <Profile />
+      <Posts />
+    </Suspense>
+  );
+}
+```
+
+```js title="Data Fetching"
+function Posts() {
+  const posts = fetchPosts("/posts");
+  return posts.map((post) => <div>{post.title}</div>);
+}
+
+function App() {
+  const Profile = React.lazy(() => import("./Profile"));
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <Profile />
+      <Suspense fallback="Loading posts..">
+        <Posts />
+      </Suspense>
+    </Suspense>
+  );
+}
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```smalltalk
+Before React 18 suspense was only used for
+- code splitting 
+- only supported on client.
+
+Now it is also supported with server side rendering
+```
+
+</CodeSurfer>
+
+---
+
+<img src={suspense1} width="80%" />
+
+---
+
+<img src={suspense2} width="80%" />
+
+---
+
+<img src={suspense3} width="80%" />
+
+---
+
+<img src={suspense4} width="80%" />
+
+---
+
+<ul>
+  <li style="opacity: 0.3">Rendering performance</li>
+  <li style="opacity: 0.3">Concurrent rendering</li>
+  <li style="opacity: 0.3">Transitions</li>
+  <li style="opacity: 0.3">Automatic batching</li>
+  <li style="opacity: 0.3">Suspense</li>
+  <li>React server components</li>
+</ul>
+
+
+---
+
+<img src={frame17} width="80%" />
+
+---
+
+<img src={frame18} width="80%" />
+
+---
+
+<img src={frame19} width="80%" />
+
+---
+
+<img src={frame20} width="80%" />
+
+---
+
+<img src={frame21} width="80%" />
+
+---
+
+<img src={frame22} width="80%" />
+
+---
+
+<img src={frame23} width="80%" />
+
+---
+
+<img src={frame24} width="80%" />
+
+---
+
+<img src={frame25} width="80%" />
+
+---
+
+<img src={frame26} width="80%" />
+
+---
+
+<img src={thankyou} />
