@@ -2,6 +2,14 @@ import { CodeSurfer, CodeSurferColumns, Step } from "code-surfer";
 import { github, vsDark, nightOwl } from "@code-surfer/themes";
 import "prismjs/components/prism-smalltalk";
 import intro from "./images/intro.jpg";
+import slow from "./images/gifs/slow.gif";
+import boss from "./images/gifs/boss.gif";
+import transition from "./images/gifs/transition.gif";
+import happy from "./images/gifs/happy.gif";
+import what from "./images/gifs/what.gif";
+import party from "./images/gifs/party.gif";
+import bored from "./images/gifs/bored.gif";
+
 import frame1 from "./renderingSlides/frame1.avif";
 import frame2 from "./renderingSlides/frame2.avif";
 import frame3 from "./renderingSlides/frame3.avif";
@@ -114,6 +122,10 @@ export const theme = nightOwl;
 ---
 
 <img src={frame9} width="80%" />
+
+---
+
+<img src={slow} width="80%" />
 
 ---
 
@@ -256,6 +268,10 @@ return (
 
 ---
 
+<img src={boss} width="80%" />
+
+---
+
 <img src={frame10} width="80%" />
 
 ---
@@ -263,7 +279,6 @@ return (
 <img src={frame11} width="80%" />
 
 ---
-
 
 <ul>
   <li style="opacity: 0.3">Rendering performance</li>
@@ -292,7 +307,8 @@ return (
 
 ---
 
-<ul>
+<div style="display: flex; align-items: center">
+<ul style="margin-right: 32px">
   <li style="opacity: 0.3">Rendering performance</li>
   <li style="opacity: 0.3">Concurrent rendering</li>
   <li >Transitions</li>
@@ -300,6 +316,9 @@ return (
   <li style="opacity: 0.3">Suspense</li>
   <li style="opacity: 0.3">React server components</li>
 </ul>
+
+<img src={transition}  />
+</div>
 
 ---
 
@@ -491,6 +510,10 @@ return (
 </Step>
 
 </CodeSurferColumns>
+
+---
+
+<img src={happy} width="60%"/>
 
 ---
 
@@ -1007,6 +1030,11 @@ Now it is also supported with server side rendering
 </CodeSurfer>
 
 ---
+
+<img src={what} width="70%" />
+
+---
+
 <img src={suspense1} width="80%" />
 
 ---
@@ -1078,19 +1106,21 @@ Now it is also supported with server side rendering
 
 ---
 
-<img src={frame23} width="80%" />
+<img src={frame25} width="80%" />
 
 ---
 
 <img src={frame24} width="80%" />
 
----
 
-<img src={frame25} width="80%" />
 
 ---
 
 <img src={frame26} width="80%" />
+
+---
+
+<img src={party} width="80%" />
 
 ---
 
