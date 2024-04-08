@@ -9,6 +9,9 @@ import happy from "./images/gifs/happy.gif";
 import what from "./images/gifs/what.gif";
 import party from "./images/gifs/party.gif";
 import bored from "./images/gifs/bored.gif";
+import renderBlocking from "./images/renderBlocking.avif";
+import optimised from "./images/optimised.avif";
+import perfCompare from "./images/perfCompare.jpg";
 
 import frame1 from "./renderingSlides/frame1.avif";
 import frame2 from "./renderingSlides/frame2.avif";
@@ -230,41 +233,11 @@ return (
 
 </Step>
 
-<Step>
-
-```js 12:13
-const [query, setQuery] = useState("");
-
-const [filteredItems, setFilteredItems] = 
-useState(dummyItems);
-
-const filterItems = (e) => {
-  const value = e.target.value;
-   const filteredItems = dummyItems.filter(
-    (item) => item.includes(value)
-  );
-
-  setQuery(value);
-  setFilteredItems([...filteredItems]);
-};
-
-return (
-  <div>
-    <input onChange={filterItems} />
-    <ul>
-      {filteredItems.map((item) => (
-        <li>{item}</li>
-      ))}
-    </ul>
-  </div>
-);
-```
-
-<Demo1 />
-
-</Step>
-
 </CodeSurferColumns>
+
+---
+
+<img src={renderBlocking} width="90%" />
 
 ---
 
@@ -322,6 +295,11 @@ return (
 
 ---
 
+- useTransition()
+- useDeferredValue()
+
+---
+
 <CodeSurferColumns themes={[nightOwl, nightOwl]}>
 
 <Step>
@@ -361,6 +339,7 @@ return (
 <Step>
 
 ```js
+impport {useTransition} from 'react';
 const [query, setQuery] = useState("");
 
 const [filteredItems, setFilteredItems] = 
@@ -513,7 +492,15 @@ return (
 
 ---
 
+<img src={perfCompare} width="90%"/>
+
+---
+
 <img src={happy} width="60%"/>
+
+---
+
+### useDeferredValue()
 
 ---
 
@@ -898,7 +885,9 @@ component tree if it's not yet ready to be displayed
 <CodeSurfer theme={nightOwl}>
 
 ```js title="Displaying fallback for lazy loaded component"
-function App() {}
+function App() {
+
+}
 ```
 
 ```js title="Displaying fallback for lazy loaded component"
@@ -911,7 +900,9 @@ function App() {
 function App() {
   const Profile = React.lazy(() => import("./Profile"));
 
-  return <Profile />;
+  return (
+    <Profile />
+  );
 }
 ```
 
@@ -929,7 +920,9 @@ function App() {
 
 
 ```js title="Data Fetching"
-function Posts() {}
+function Posts() {
+
+}
 
 function App() {
   const Profile = React.lazy(() => import("./Profile"));
@@ -1120,8 +1113,5 @@ Now it is also supported with server side rendering
 
 ---
 
-<img src={party} width="80%" />
-
----
 
 <img src={thankyou} width="80%" />
